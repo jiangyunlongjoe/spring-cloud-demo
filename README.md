@@ -9,15 +9,11 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+无
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+拉取源代码下来，修改register-server模块下application.yml的配置端口(默认为8800)；修改provider模块下的application.yml配置的端口（默认9001）；修改consumer模块下的application.yml配置的端口（默认10010）；
 
 #### 参与贡献
 
