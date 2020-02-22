@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: register-server  #注册中心的服务ID
+server:
+  port: 8800
+
+eureka:
+  client:
+    register-with-eureka: false # 由于当前这个应用就是eureka-server 故而设置为false
+    fetch-registry: false # 是否需要同步其他 eureka-server的数据 因为是单节点注册中心  设置为：false
+    service-url:
+      defaultZone: http://localhost:8800/eureka/

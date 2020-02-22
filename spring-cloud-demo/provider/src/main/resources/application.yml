@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: provider # 注册中心的服务ID
+  cloud:
+    discovery:
+      enabled: true # 启动服务发现功能
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8800/eureka/  #注册中心地址
