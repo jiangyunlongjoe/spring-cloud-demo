@@ -6,5 +6,5 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8800/eureka/
+      defaultZone: http://register-server.spring-cloud.svc.cluster.local:8800/eureka/
 

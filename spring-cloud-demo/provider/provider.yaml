@@ -1,0 +1,46 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: provider
+
+  name: provider
+
+  namespace: spring-cloud
+spec:
+  type: NodePort
+  ports:
+  - port: 9001
+    targetPort: 9001
+  selector:
+    app: provider
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: spring-cloud
+  name: provider
+
+  labels:
+    app: provider
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: provider
+
+  template:
+    metadata:
+      labels:
+        app: provider
+
+    spec:
+      containers:
+      - name: provider
+
+        image: 10.1.2.10:5000/provider:0.2
+        imagePullPolicy: IfNotPresent    

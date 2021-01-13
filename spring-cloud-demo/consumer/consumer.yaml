@@ -1,0 +1,38 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: consumer
+  name: consumer
+  namespace: spring-cloud
+spec:
+  type: NodePort
+  ports:
+  - port: 10010
+    targetPort: 10010
+  selector:
+    app: consumer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: spring-cloud
+  name: consumer
+  labels:
+    app: consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer
+  template:
+    metadata:
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - name: consumer
+        image: 10.1.2.10:5000/consumer:0.2
+        imagePullPolicy: IfNotPresent    

@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: spring-cloud
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: register-server
+  name: register-server
+  namespace: spring-cloud
+spec:
+  type: NodePort
+  ports:
+  - port: 8800
+    targetPort: 8800
+  selector:
+    app: register-server
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: spring-cloud
+  name: register-server
+  labels:
+    app: register-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register-server
+  template:
+    metadata:
+      labels:
+        app: register-server
+    spec:
+      containers:
+      - name: register-server
+        image: 10.1.2.10:5000/register-server:0.2
+        imagePullPolicy: IfNotPresent    
