@@ -9,4 +9,5 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://register-server.spring-cloud.svc.cluster.local:8800/eureka/  #注册中心地址
+      #defaultZone: http://localhost:8800/eureka/ ## for docker
+      defaultZone: http://register-server.spring-cloud.svc.cluster.local:8800/eureka/  #注册中心地址 for k8s
