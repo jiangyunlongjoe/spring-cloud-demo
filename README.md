@@ -15,16 +15,23 @@ mvn clean package -Dmaven.test.skip=true
 #### Dockerfile build
 
 docker build -t register-server:0.2 .
+
 docker build -t provider:0.2 .
+
 docker build -t consumer:0.2 .
 
 To run
 docker run --name register-server -d -p 8800:8800 --net=host register-server:0.1
+
 docker run --name provider -d -p 9001:9001 --net=host provider:0.1
+
 docker run --name consumer -d -p 10010:10010 --net=host consumer:0.1
+
 
 
 To kubernetes
 kubectl apply -f register-server.yaml
+
 kubectl apply -f provider.yaml
+
 kubectl apply -f consumer.yaml
