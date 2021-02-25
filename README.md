@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Spring Cloud 分布式微服务开发Demo
 
 #### 介绍
@@ -37,3 +38,4 @@ kubectl apply -f register-server.yaml
 kubectl apply -f provider.yaml
 
 kubectl apply -f consumer.yaml
+
