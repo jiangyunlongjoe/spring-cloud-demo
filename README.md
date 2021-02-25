@@ -9,11 +9,11 @@
 拉取源代码下来，修改register-server模块下application.yml的配置端口(默认为8800)；修改provider模块下的application.yml配置的端口（默认9001）；修改consumer模块下的application.yml配置的端口（默认10010）；
 
 
-**#### To build** 
+**#### To build####** 
 
 mvn clean package -Dmaven.test.skip=true
 
- **#### Dockerfile build** 
+ **#### Dockerfile build####** 
 
 docker build -t register-server:0.2 .
 
